@@ -1,6 +1,17 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addUser } from '../redux/slice';
 
 const AddUsers = () => {
+  const [name, setName] = useState('');
+  const dispatch = useDispatch();
+
+  const userDispatch = () => {
+    dispatch(addUser(name));
+  };
+
   return (
     <div
       style={{
@@ -12,6 +23,7 @@ const AddUsers = () => {
     >
       <h2 style={{ fontWeight: 'bold', fontSize: '30px' }}>Add Users</h2>
       <input
+        onChange={(e) => setName(e.target.value)}
         type="text"
         placeholder="Add New Users"
         style={{
@@ -24,6 +36,7 @@ const AddUsers = () => {
       />
       <br />
       <button
+        onClick={userDispatch}
         style={{
           backgroundColor: '#D2D2D2',
           outline: 'none',
