@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../redux/slice';
+import Link from 'next/link';
 
 const AddUsers = () => {
   const [name, setName] = useState('');
@@ -50,6 +51,7 @@ const AddUsers = () => {
       >
         Add User
       </button>
+      <Link href="/removeuser">New Page</Link>
     </div>
   );
 };
