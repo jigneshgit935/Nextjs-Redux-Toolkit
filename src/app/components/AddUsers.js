@@ -52,6 +52,15 @@ const AddUsers = () => {
         Add User
       </button>
       <Link href="/removeuser">New Page</Link>
+
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <div>
+        <Link href="/todolist">Go to Todo Page</Link>
+      </div>
     </div>
   );
 };
