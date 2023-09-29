@@ -26,9 +26,9 @@ const DisplayUsers = () => {
                 display: 'flex',
                 justifyContent: 'space-between',
                 backgroundColor: '#d2d2d2',
-                padding: '5px 10px',
+                padding: '10px 10px',
                 borderRadius: '10px',
-                width: '250px',
+                width: '500px',
                 marginTop: '10px',
               }}
             >
@@ -39,7 +39,15 @@ const DisplayUsers = () => {
               >
                 {item.name}
               </h4>
-              <button onClick={() => dispatch(removeUser(item.id))}>
+              <button
+                style={{
+                  outline: 'none',
+                  border: 'none',
+                  padding: '2px 15px',
+                  borderRadius: '50px',
+                }}
+                onClick={() => dispatch(removeUser(item.id))}
+              >
                 Remove
               </button>
             </div>

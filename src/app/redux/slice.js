@@ -29,14 +29,14 @@ const Slice = createSlice({
       state.users.push(data);
       let userData = JSON.stringify(current(state.users));
       localStorage.setItem('users', userData);
-      console.log(current(state.users));
     },
     removeUser: (state, action) => {
       const data = state.users.filter((item) => {
         return item.id !== action.payload;
       });
       state.users = data;
-      localStorage.removeItem('users');
+      let userData = JSON.stringify(data);
+      localStorage.setItem('users', userData);
     },
   },
   extraReducers: (builder) => {
