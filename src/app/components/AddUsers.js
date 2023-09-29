@@ -10,58 +10,133 @@ const AddUsers = () => {
   const dispatch = useDispatch();
 
   const userDispatch = () => {
-    dispatch(addUser(name));
+    if (name.length !== 0) {
+      dispatch(addUser(name));
+    } else {
+      alert('Please Add User Name');
+    }
   };
 
   return (
-    <div
-      style={{
-        border: '1px solid grey',
-        padding: '10px 30px',
-        height: '200px',
-        marginBottom: '30px',
-      }}
-    >
-      <h2 style={{ fontWeight: 'bold', fontSize: '30px' }}>Add Users</h2>
-      <input
-        onChange={(e) => setName(e.target.value)}
-        type="text"
-        placeholder="Add New Users"
+    <>
+      <h1
         style={{
-          width: '250px',
-          height: '50px',
-          padding: '5px',
-          marginTop: '10px',
-          fontSize: '18px',
-        }}
-      />
-      <br />
-      <button
-        onClick={userDispatch}
-        style={{
-          backgroundColor: '#D2D2D2',
-          outline: 'none',
-          border: 'none',
-          cursor: 'pointer',
-          padding: '10px 30px',
-          fontSize: '18px',
-          marginTop: '20px',
-          borderRadius: '8px',
+          textAlign: 'center',
+          fontSize: '32px',
+          padding: '15px 0px',
+          textDecorationLine: 'underline',
         }}
       >
-        Add User
-      </button>
-      <Link href="/removeuser">New Page</Link>
+        REDUX-TOOLKIT
+      </h1>
+      <div
+        style={{
+          border: '1px solid grey',
+          padding: '10px 30px',
+          marginBottom: '30px',
+          display: 'flex',
+          gap: '600px',
+          alignItems: 'center',
+        }}
+      >
+        <div>
+          <h2 style={{ fontWeight: 'bold', fontSize: '30px' }}>Add Users</h2>
+          <input
+            onChange={(e) => setName(e.target.value)}
+            type="text"
+            placeholder="Add New Users"
+            style={{
+              width: '300px',
+              height: '50px',
+              padding: '5px',
+              marginTop: '10px',
+              fontSize: '18px',
+            }}
+          />
 
-      <br />
-      <br />
-      <br />
-      <br />
+          <div
+            style={{
+              marginTop: '20px',
+              padding: '2px 0px',
+              display: 'flex',
+              gap: '16px',
+            }}
+          >
+            <button
+              onClick={userDispatch}
+              style={{
+                backgroundColor: '#D2D2D2',
+                outline: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                padding: '10px 30px',
+                fontSize: '18px',
+                borderRadius: '8px',
+              }}
+            >
+              Add User
+            </button>
+            <Link
+              style={{
+                backgroundColor: '#D2D2D2',
+                outline: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                padding: '10px 30px',
+                fontSize: '18px',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                color: 'inherit',
+              }}
+              href="/removeuser"
+            >
+              New Page
+            </Link>
+          </div>
+        </div>
 
-      <div>
-        <Link href="/todolist">Go to Todo Page</Link>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            rowGap: '50px',
+          }}
+        >
+          <Link
+            style={{
+              backgroundColor: '#D2D2D2',
+              outline: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              padding: '10px 30px',
+              fontSize: '18px',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              color: 'inherit',
+            }}
+            href="/todolist"
+          >
+            Go to Todo Page
+          </Link>
+          <Link
+            style={{
+              backgroundColor: '#D2D2D2',
+              outline: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              padding: '10px 30px',
+              fontSize: '18px',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              color: 'inherit',
+            }}
+            href="/apiuser"
+          >
+            Go to Api ListPage
+          </Link>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
